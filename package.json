@@ -1,0 +1,17 @@
+{
+  "name": "js-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello-world.js",
+  "scripts": {
+    "test": "node ./exercise-mar28.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "color": "^5.0.3",
+    "colors": "^1.4.0"
+  }
+}

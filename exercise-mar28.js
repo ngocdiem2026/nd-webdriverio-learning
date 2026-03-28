@@ -1,31 +1,4 @@
-/** Bài tập 1: Quản lý danh sách lỗi (Array)
-- Tạo mảng bugList chứa 3 lỗi: "Lỗi giao diện", "Lỗi API", "Lỗi Logic".
-- Dùng lệnh để thêm lỗi "Lỗi bảo mật" vào cuối danh sách.
-- Xóa lỗi đầu tiên ra khỏi mảng.
-- In ra màn hình: "Danh sách hiện có [số lượng] lỗi".
- */
-const bugList = ["UI bug", "API bug", "Logic bug"]
-bugList.push("Security bug")
-bugList.shift()
-console.log(`Test 1: The current list contains ${bugList.length} bugs`)
-
-/**Bài tập 2:  Quản lý thông tin cấu hình (Object)
-- Tạo một Object config bao gồm: browser: "Chrome", headless: false, retries: 2.
-- Hãy đổi headless thành true.
-- Thêm một thuộc tính mới là screenshot: "on-failure".
-- In toàn bộ Object config ra màn hình.
- */
-const config = {
-    browser: "Chrome",
-    headless: false,
-    retries: 2
-}
-config.headless = true
-config.screenshot = "on-failure"
-console.log("Test 2: Configuration Information")
-console.log(config)
-
-/** ==================== HOMEWORK ================================= */
+// ==================== HOMEWORK ================================= 
 
 /**Bài 1: Kiểm tra kết quả Test Khai báo biến actualResult = "Login Success" và expectedResult = "Login Success". 
  * Hãy dùng if...else để in ra "PASSED" nếu hai biến bằng nhau, ngược lại in ra "FAILED".
@@ -85,3 +58,34 @@ if (!Number.isNaN(productCount) && productCount > 0) {
 }
 console.log(` ==> If the product quantity retrieved from the website is a string like '5', 
     I prefer convert it to a number before comparing it to ensure it is greater than 0, as this approach is safer.`.blue)
+
+
+/** =========================== CLASS ASSIGNMENTS ====================================
+
+/** Bài tập 1: Quản lý danh sách lỗi (Array)
+- Tạo mảng bugList chứa 3 lỗi: "Lỗi giao diện", "Lỗi API", "Lỗi Logic".
+- Dùng lệnh để thêm lỗi "Lỗi bảo mật" vào cuối danh sách.
+- Xóa lỗi đầu tiên ra khỏi mảng.
+- In ra màn hình: "Danh sách hiện có [số lượng] lỗi".
+ 
+const bugList = ["UI bug", "API bug", "Logic bug"]
+bugList.push("Security bug")
+bugList.shift()
+console.log(`Test 1: The current list contains ${bugList.length} bugs`)
+
+/**Bài tập 2:  Quản lý thông tin cấu hình (Object)
+- Tạo một Object config bao gồm: browser: "Chrome", headless: false, retries: 2.
+- Hãy đổi headless thành true.
+- Thêm một thuộc tính mới là screenshot: "on-failure".
+- In toàn bộ Object config ra màn hình.
+ 
+const config = {
+    browser: "Chrome",
+    headless: false,
+    retries: 2
+}
+config.headless = true
+config.screenshot = "on-failure"
+console.log("Test 2: Configuration Information")
+console.log(config)
+*/
