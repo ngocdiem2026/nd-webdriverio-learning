@@ -56,8 +56,8 @@ if (!Number.isNaN(productCount) && productCount > 0) {
 } else {
     console.log("Exercise 4: Invalid or less than 0");
 }
-console.log(` ==> If the product quantity retrieved from the website is a string like '5', 
-    I prefer convert it to a number before comparing it to ensure it is greater than 0, as this approach is safer.`.blue)
+console.log(` ==> To check if a string like '5' is greater than 0, the safest approach is to explicitly parse it into an integer first. 
+This prevents any unexpected behavior during the comparison.`.blue)
 
 
 /** =========================== CLASS ASSIGNMENTS ====================================
