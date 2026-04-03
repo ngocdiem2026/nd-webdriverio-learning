@@ -68,7 +68,7 @@ function validatePassword(password) {
     // check Uppercase
     let hasUppercase = false
     for (let char of password) {
-        if (char >= "A" && char <= "Z") {
+        if (/[A-Z]/.test(char)) {
             hasUppercase = true
             break
         }
@@ -80,7 +80,7 @@ function validatePassword(password) {
     //check number
     let hasNumber = false
     for (let char of password) {
-        if (char >= "0" && char <= "9") {
+        if (/\d/.test(char)) {
             hasNumber = true
             break
         }
@@ -97,7 +97,7 @@ console.log(validatePassword("thisismypassword12323434445"))
 console.log(validatePassword("Pass word"))
 console.log(validatePassword("password213421"))
 console.log(validatePassword("PassWord"))
-console.log(validatePassword("PassWord3003"))
+console.log(validatePassword("passWord3003"))
 
 //cSpell: disable
 /** Bài 3: Tính toán Phí vận chuyển Đa quốc gia (Shipping Logic)
@@ -113,7 +113,7 @@ console.log(validatePassword("PassWord3003"))
  */
 //cSpell: enable
 function calculateShipping(weight, distance, membership) {
-    let totalFee = 50
+    let totalFee = 50 //Changed the value to cover the total > $100 scenario.
 
     //check weight
     if (weight > 50) {
@@ -135,8 +135,6 @@ function calculateShipping(weight, distance, membership) {
         case "Silver":
             totalFee = totalFee * 0.8
             break
-        default:
-            totalFee = totalFee
     }
 
     //discount 10$ if totalFee > 100$
@@ -146,7 +144,6 @@ function calculateShipping(weight, distance, membership) {
 
     return totalFee
 }
-
 console.log(`Exercise 3: Shipping Logic`.blue)
 console.log("Your total fee is " + calculateShipping(8, 300, "Guest"))
 console.log("Your total fee is " + calculateShipping(12, 600, "Silver"))
@@ -178,10 +175,10 @@ function smartRunner(isServerUp, isDatabaseConnected, lastTestStatus, isWeekend)
     return "Run on weekdays only."
 }
 console.log(`Exercise 4: Smart Runner`.rainbow)
-console.log(smartRunner(false, true, "Failed", false));
-console.log(smartRunner(true, true, "Passed", false));
-console.log(smartRunner(true, true, "Failed", true));
-console.log(smartRunner(true, true, "Passed", true));
+console.log(smartRunner(false, true, "Failed", false))
+console.log(smartRunner(true, true, "Passed", false))
+console.log(smartRunner(true, true, "Failed", true))
+console.log(smartRunner(true, true, "Passed", true))
 
 //cSpell: disable
 /** Bài 5: Xây dựng Bộ lọc Tìm kiếm nâng cao (The Ultimate Filter)
@@ -195,8 +192,8 @@ console.log(smartRunner(true, true, "Passed", true));
 //cSpell: enable
 function checkProduct(product, filter) {
 
-    const priceMatch = filter.maxPrice === "undefined" || product.price <= filter.maxPrice
-    const colorMatch = filter.preferredColor === "undefined" || product.color === filter.preferredColor
+    const priceMatch = filter.maxPrice === undefined || product.price <= filter.maxPrice
+    const colorMatch = filter.preferredColor === undefined || product.color === filter.preferredColor
     const stockMatch = filter.requireStock !== true || product.inStock === true
 
     if (priceMatch && colorMatch && stockMatch)
@@ -225,7 +222,7 @@ const filter1 = {
     preferredColor: "Black",
     requireStock: true
 }
-console.log(checkProduct(product1, filter1))
+console.log("Valid case: " + checkProduct(product1, filter1))
 
 //invalid cases
 const product2 = {
@@ -239,4 +236,4 @@ const filter2 = {
     preferredColor: "Black",
     requireStock: true
 }
-console.log(checkProduct(product2, filter2))
+console.log("Invalid case: " + checkProduct(product2, filter2))
