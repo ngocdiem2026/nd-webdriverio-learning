@@ -113,7 +113,7 @@ console.log(validatePassword("passWord3003"))
  */
 //cSpell: enable
 function calculateShipping(weight, distance, membership) {
-    let totalFee = 50 //Changed the value to cover the total > $100 scenario.
+    let totalFee = 50 //Changed the value from $5 to $50 to cover the total > $100 scenario.
 
     //check weight
     if (weight > 50) {
